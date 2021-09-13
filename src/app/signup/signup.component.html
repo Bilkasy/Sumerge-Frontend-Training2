@@ -1,0 +1,99 @@
+<app-header></app-header>
+
+<form class="cont" (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="row">
+        <div class="form-group col-xs-11 ">
+            <label id="username" for="userName">Username:</label>
+            <input 
+            type="text" 
+            class="form-control" 
+            id="userName" 
+            placeholder="Username" 
+            name="username"
+            required 
+            ngModel
+            minlength="5"
+            maxlength="15"
+            #username = "ngModel"
+            >
+            <span class="help-block" *ngIf="(!username.valid && username.touched)">Please Enter a Username between (5-15) characters... </span>            
+          </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-11 ">
+            <label for="email">Email:</label>
+            <input
+             type="email" 
+             class="form-control" 
+             id="email" 
+             placeholder="Email" 
+             name="email"
+             required 
+             ngModel
+             email 
+             #email = "ngModel"
+             >
+             <span class="help-block" *ngIf="(!email.valid && email.touched)">Please Enter a valid Email Value... </span>
+          </div>
+
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-11 ">
+            <label for="exampleInputPassword1">Password:</label>
+            <input 
+            type="password" 
+            class="form-control" 
+            id="exampleInputPassword1" 
+            placeholder="Password" 
+            name="password"
+            required
+            ngModel 
+            minlength="5"
+            maxlength="15"
+            #password = "ngModel"
+             >
+             <span class="help-block" *ngIf="(!password.valid && password.touched)">Please Enter a valid Password Value of (5-15) characters... </span>
+          </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-11 ">
+            <label for="mobile">Mobile:</label>
+            <input 
+            type="text" 
+            class="form-control" 
+            id="mobile" 
+            placeholder="Mobile Number" 
+            name="mobile"
+            required  
+            ngModel
+            maxlength="11"
+            minlength="11"
+            #mobile = "ngModel"
+            >
+            <span class="help-block" *ngIf="(!mobile.valid && mobile.touched)">Please Enter a valid mobile number... </span>
+          </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-11 ">
+            <label for="address">Address:</label>
+            <input 
+            type="text" 
+            class="form-control" 
+            id="address" 
+            placeholder="Address" 
+            name="address"
+            ngModel
+            required
+            #address = "ngModel"
+            > 
+            <span class="help-block" *ngIf="(!address.valid && address.touched)">Address is required...</span>
+          </div>
+    </div>
+    
+      <div id="login-signup row">
+        <button [disabled]="!f.valid" type="submit" class="btn loginBtn btn btn-primary col-xs-offset-5">SignUp</button>
+        <p class="col-xs-offset-5"id="signupChoice"><a routerLink="/login-signup">LogIn Now?</a></p>
+      </div>   
+  </form>
+
+  <app-footer></app-footer>

@@ -1,0 +1,65 @@
+<app-header></app-header>
+
+<form class="cont" #f="ngForm">
+    <div class="row">
+        <div class="form-group col-xs-11 ">
+            <label for="userName">Username:</label>
+            <input 
+            type="text" 
+            class="form-control" 
+            id="userName" 
+            placeholder="Username" 
+            ngModel
+            name="username"
+            required
+            minlength="5"
+            maxlength="15"
+            #username = "ngModel"
+            >
+            <span class="help-block" *ngIf="(!username.valid && username.touched)">Please Enter a valid Username Value of (5-15) characters... </span>
+          </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-11 ">
+            <label for="exampleInputPassword1">Password:</label>
+            <input 
+            type="password" 
+            class="form-control" 
+            id="exampleInputPassword1" 
+            placeholder="Password" 
+            ngModel
+            name="passsword"
+            minlength="5"
+            maxlength="15"
+            required
+            #password = "ngModel"
+            >
+            <span class="help-block" *ngIf="(!password.valid && password.touched)">Please Enter a valid Password Value of (5-15) characters... </span>
+
+          </div>
+    </div>
+    <div class="checkbox">
+        <label>
+          <input type="checkbox"> Remember me
+        </label>
+      </div>
+      <div id="login-signup row">
+        <button [disabled]="!f.valid" type="submit" class="btn loginBtn btn btn-primary col-xs-offset-5">LogIn</button>
+        <p class="col-xs-offset-5"id="signupChoice"><a routerLink="/login-signup/signup">Not a user?</a></p>
+      </div>   
+    
+  </form>
+
+  <app-footer></app-footer>
+
+
+
+
+
+
+
+
+
+
+
+

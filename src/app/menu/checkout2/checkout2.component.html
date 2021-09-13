@@ -1,0 +1,51 @@
+
+<table *ngIf = "!isShown"  class="table">
+        <!-- On rows -->
+    <tr class="active">
+        <th>Item Name</th>
+        <th>Item Description</th>
+        <th>Item Quantity</th>
+        <th>One Item Price</th>
+        <th>Total Item Price</th>
+    </tr>
+    <tr *ngFor="let myCheckoutItems of checkoutItems;let index = index;">
+        <td>{{myCheckoutItems.name}}</td>
+        <td>{{myCheckoutItems.description}}</td>
+        <td><input 
+            ngModel 
+            #quantity
+            name="quantity" 
+            type="number" 
+            name="" 
+            min = "0"
+            id="quantityInput"
+            (change)="calculatePrice(myCheckoutItems.price,quantity.value,index)"
+            >
+        </td>
+        <td>{{ myCheckoutItems.price }} LE</td>
+        <!-- <td >{{ totalSingleItemPrice }} LE</td> -->
+        <td>{{myCheckoutItems.total}} LE</td>
+    </tr>
+
+  </table>
+
+
+  <table *ngIf = "isShown" class="table2">
+    <tr>
+        <th scope="row"> Total before Taxes </th>
+        <td id="totalPrice"> {{getTotalItemsPrice()}} LE</td>
+    </tr>
+    <tr>
+        <th scope="row"> Total after Taxes </th>
+        <td  id="totalPrice"> {{getTotalItemsPrice() * 1.2}} LE </td>
+    </tr>
+  </table>
+
+  <div *ngIf = "isShown" class="row">
+    <div class="col-xs-offset-1 col-xs-10  col-sm-offset-2 col-sm-8 col-md-offset-3 col-md-6 col-lg-offset-4 col-lg-4">
+        <h1 id="thanksText">You order is on its way....</h1>
+    </div>
+  </div>
+
+
+<button id="submitOrderBtn" *ngIf = "!isShown" class="submitBtn btn btn-primary" (click)="makeTotalPriceAppear()">Submit</button>

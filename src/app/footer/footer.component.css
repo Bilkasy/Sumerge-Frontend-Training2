@@ -1,0 +1,38 @@
+.navbar{
+    width: 180px;
+    border-radius: 10%;
+    background-color: rgb(42, 70, 64);
+    opacity: 0.5;
+    padding-left: 0px;
+    
+}
+
+.navbar:hover {
+    opacity: 1.0;
+  }
+.footer{
+    background-color: yellowgreen;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#footer-img{
+    height: 100px;
+    margin-left: 20%;
+    margin-top: 2%;
+}
+#since-div
+{
+    /* background-color: darkblue; */
+    font-size: x-large;
+    color: white;
+    font-weight: 900;
+    margin-top: 0%;
+    text-align: center;
+}
+.address{
+    text-align: center;
+    color: white;
+}
+
+

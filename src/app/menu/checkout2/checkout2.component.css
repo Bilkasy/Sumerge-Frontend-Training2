@@ -1,0 +1,40 @@
+.table{
+    background-color: gray;
+    border: 1px solid white;
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+
+}
+.table2{
+    background-color: gray;
+    border: 1px solid white;
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+
+}
+th,tr{
+    color: black;
+    border:1px solid white;  
+    text-align: center;
+}
+
+td{
+    border:1px solid white;  
+}
+#quantityInput{
+    width: 70%;
+    color: black;
+}
+.submitBtn {
+    margin-left: 47%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+#thanksText{
+    margin-bottom: 20px;
+    border: 1px solid gray;
+    padding: 10px;
+}

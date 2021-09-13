@@ -1,0 +1,22 @@
+#home-bg{
+    background:url(../../assets/imgs/background4.jpg);
+    height: 700px;
+    background-repeat: no-repeat;
+    opacity: 0.7   ;
+    border-radius: 20%;
+    margin-top: 120px;
+
+}
+.homeText{
+    margin-top: 200px;
+    color: rgb(27, 25, 25);
+    font-weight: 900;
+    position: fixed;
+}
+
+/* @media(max-width:1000px){
+    .homeText{
+        left: 7%;
+        font-size: 30px;
+    }
+} */
